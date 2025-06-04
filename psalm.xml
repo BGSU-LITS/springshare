@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<psalm
+    cacheDirectory="cache/psalm"
+    checkForThrowsDocblock="true"
+    ensureArrayIntOffsetsExist="true"
+    ensureArrayStringOffsetsExist="true"
+    errorLevel="1"
+    findUnusedBaselineEntry="true"
+    findUnusedVariablesAndParams="true"
+    findUnusedPsalmSuppress="true"
+    findUnusedCode="false"
+    findUnusedIssueHandlerSuppression="false"
+    ignoreInternalFunctionFalseReturn="false"
+    ignoreInternalFunctionNullReturn="false"
+    resolveFromConfigFile="false"
+    sealAllMethods="true"
+    strictBinaryOperands="true"
+>
+    <issueHandlers>
+        <PropertyNotSetInConstructor errorLevel="suppress" />
+    </issueHandlers>
+    <plugins>
+        <pluginClass class="Psalm\PhpUnitPlugin\Plugin"/>
+    </plugins>
+    <projectFiles>
+        <directory name="src"/>
+        <ignoreFiles>
+            <directory name="vendor" />
+        </ignoreFiles>
+    </projectFiles>
+</psalm>
