@@ -1,3 +1,0 @@
-cache-dir: cache/phplint
-exclude:
-  - vendor

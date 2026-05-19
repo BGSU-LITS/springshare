@@ -35,7 +35,7 @@ final class ClientCredentials extends Request implements Cacheable
     public function cacheExpiryInSeconds(): int
     {
         // One day minus 1 minute.
-        return 24 * 60 * 60 - 60;
+        return (24 * 60 * 60) - 60;
     }
 
     /** @return array<\Saloon\Enums\Method> */

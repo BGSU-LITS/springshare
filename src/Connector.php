@@ -32,6 +32,7 @@ abstract class Connector extends SaloonConnector implements Cacheable
     public function __construct(
         public string $host,
         public string $clientId,
+        #[\SensitiveParameter]
         public string $clientSecret,
         Cache|CacheItemPool|Driver $cache = new ArrayAdapter(),
     ) {
@@ -65,17 +66,11 @@ abstract class Connector extends SaloonConnector implements Cacheable
     }
 
     #[\Override]
-    protected function defaultAuth(): ?Authenticator
+    protected function defaultAuth(): Authenticator
     {
-        $authenticator = $this
+        return $this
             ->authenticate(new NullAuthenticator())
             ->getAccessToken();
-
-        if ($authenticator instanceof Authenticator) {
-            return $authenticator;
-        }
-
-        return null;
     }
 
     protected function defaultOauthConfig(): OAuthConfig

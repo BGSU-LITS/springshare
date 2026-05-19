@@ -1,0 +1,83 @@
+#:schema https://mago.carthage.software/1.28.0/schema.json
+# Welcome to Mago!
+# For full documentation, see https://mago.carthage.software/tools/overview
+version = "1"
+php-version = "8.2.0"
+
+[source]
+workspace = "."
+paths = ["src"]
+includes = ["vendor"]
+excludes = []
+
+[source.glob]
+literal-separator = true
+
+[parser]
+enable-short-tags = false
+
+[linter.rules]
+ambiguous-constant-access = { enabled = true }
+ambiguous-function-call = { enabled = true }
+method-name = { enabled = true }
+no-alternative-syntax = { enabled = true }
+no-array-accumulation-in-loop = { enabled = true }
+no-assign-in-condition = { enabled = true }
+no-assign-in-argument = { enabled = true }
+no-dead-store = { enabled = true }
+no-negated-ternary = { enabled = true }
+no-redundant-else = { enabled = true }
+no-redundant-variable = { enabled = true }
+no-iterator-to-array-in-foreach = { enabled = true }
+no-inline = { enabled = true }
+no-is-null = { enabled = true }
+no-literal-namespace-string = { enabled = true }
+no-parameter-shadowing = { enabled = true }
+no-null-property-init = { enabled = true }
+no-service-state-mutation = { enabled = true }
+no-short-bool-cast = { enabled = true }
+no-side-effects-with-declarations = { enabled = true }
+no-unused-closure-capture = { enabled = true }
+no-unused-global = { enabled = true }
+no-unused-static = { enabled = true }
+require-namespace = { enabled = true }
+prefer-array-spread = { enabled = true }
+prefer-early-continue = { enabled = true, max_allowed_statements = 1 }
+prefer-explode-over-preg-split = { enabled = true }
+prefer-pre-increment = { enabled = true }
+prefer-self-return-type = { enabled = true }
+property-name = { enabled = true, either = true }
+sorted-integer-keys = { enabled = true }
+string-style = { enabled = true, style = 'concatenation' }
+switch-continue-to-break = { enabled = true }
+variable-name = { enabled = true, either = true }
+yoda-conditions = { enabled = true, mode = 'deny' }
+
+# Some Springshare API services have boolean parameters.
+no-boolean-flag-parameter = { enabled = false }
+
+[analyzer]
+analyze-dead-code = true
+check-arrow-function-missing-type-hints = true
+check-closure-missing-type-hints = true
+check-missing-override = true
+check-missing-type-hints = true
+check-throws = true
+check-use-statements = true
+enforce-class-finality = true
+find-overly-wide-return-types = true
+find-unused-parameters = true
+no-boolean-literal-comparison = true
+strict-array-index-existence = true
+strict-list-index-checks = true
+trust-existence-checks = false
+
+# Saloon provides traits with uninitialized properties.
+check-property-initialization = false
+
+[formatter]
+print-width = 80
+preserve-breaking-argument-list = true
+preserve-breaking-conditional-expression = true
+preserve-breaking-member-access-chain = true
+preserve-breaking-parameter-list = true

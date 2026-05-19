@@ -11,9 +11,9 @@ final class FormFields extends Request
 {
     protected Method $method = Method::GET;
 
-    public function __construct(protected readonly int $queue_id)
-    {
-    }
+    public function __construct(
+        protected readonly int $queue_id,
+    ) {}
 
     #[\Override]
     public function resolveEndpoint(): string

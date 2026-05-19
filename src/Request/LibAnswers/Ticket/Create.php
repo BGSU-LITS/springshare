@@ -21,8 +21,7 @@ final class Create extends Request implements HasBody
         protected string $pquestion,
         protected bool $confirm_email = false,
         protected array $fields = [],
-    ) {
-    }
+    ) {}
 
     #[\Override]
     public function resolveEndpoint(): string
@@ -33,10 +32,12 @@ final class Create extends Request implements HasBody
     /** @return array<mixed> */
     protected function defaultBody(): array
     {
-        return [
+        $standard = [
             'quid' => $this->quid,
             'pquestion' => $this->pquestion,
             'confirm_email' => (int) $this->confirm_email,
-        ] + $this->fields;
+        ];
+
+        return $standard + $this->fields;
     }
 }

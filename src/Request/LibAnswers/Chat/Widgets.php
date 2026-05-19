@@ -11,9 +11,9 @@ final class Widgets extends Request
 {
     protected Method $method = Method::GET;
 
-    public function __construct(protected readonly ?int $id = null)
-    {
-    }
+    public function __construct(
+        protected readonly ?int $id = null,
+    ) {}
 
     #[\Override]
     public function resolveEndpoint(): string
