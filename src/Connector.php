@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Lits\Springshare;
 
+use CuyZ\Valinor\MapperBuilder;
 use Lits\Springshare\Request\ClientCredentials;
 use Psr\Cache\CacheItemPoolInterface as CacheItemPool;
 use Psr\SimpleCache\CacheInterface as Cache;
@@ -27,7 +28,7 @@ abstract class Connector extends SaloonConnector implements Cacheable
 
     public Driver $cacheDriver;
     public int $cacheExpiry = 60;
-    protected string $version = '1.1';
+    public string $version = '1.1';
 
     public function __construct(
         public string $host,
@@ -35,6 +36,7 @@ abstract class Connector extends SaloonConnector implements Cacheable
         #[\SensitiveParameter]
         public string $clientSecret,
         Cache|CacheItemPool|Driver $cache = new ArrayAdapter(),
+        public MapperBuilder $mapperBuilder = new MapperBuilder(),
     ) {
         if ($cache instanceof CacheItemPool) {
             $cache = new Psr16Cache($cache);

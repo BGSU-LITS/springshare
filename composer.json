@@ -10,6 +10,7 @@
     ],
     "require": {
         "php": "^8.2",
+        "cuyz/valinor": "^2.4",
         "psr/cache": "^3.0",
         "psr/simple-cache": "^3.0",
         "saloonphp/cache-plugin": "^3.0",

@@ -53,6 +53,9 @@ switch-continue-to-break = { enabled = true }
 variable-name = { enabled = true, either = true }
 yoda-conditions = { enabled = true, mode = 'deny' }
 
+# Ignore excessive parameter lists as part of API.
+excessive-parameter-list = { enabled = false }
+
 # Some Springshare API services have boolean parameters.
 no-boolean-flag-parameter = { enabled = false }
 
@@ -76,7 +79,6 @@ trust-existence-checks = false
 check-property-initialization = false
 
 [formatter]
-print-width = 80
 preserve-breaking-argument-list = true
 preserve-breaking-conditional-expression = true
 preserve-breaking-member-access-chain = true
